@@ -1,9 +1,9 @@
 name: Update Nodes
 
-# 自动更新订阅节点: 抓取 -> 去重 -> 回写仓库, 每 6 小时 + 可手动触发
+# 自动更新订阅节点: 抓取 -> 去重 -> 回写仓库, 每 4 小时 + 可手动触发
 on:
   schedule:
-    - cron: '0 */6 * * *'   # 每 6 小时
+    - cron: '0 */4 * * *'   # 每 4 小时
   workflow_dispatch:
 
 permissions:
