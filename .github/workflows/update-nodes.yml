@@ -24,8 +24,8 @@ jobs:
       - name: Fetch and merge nodes
         shell: bash
         run: |
-          git config user.name "szhsh2011-jpg"
-          git config user.email "auto@users.noreply.github.com"
+          git config user.name "ssnn20012001-bot"
+          git config user.email "ssnn20012001-bot@users.noreply.github.com"
           # 用内置 token 推送(workflow 自动注入), 无需个人 PAT
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           chmod +x fetch.sh
