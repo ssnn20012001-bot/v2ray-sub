@@ -7,13 +7,19 @@
 v2rayN / Clash 等客户端在"订阅"里添加以下地址即可:
 
 ```
-https://raw.githubusercontent.com/szhsh2011-jpg/v2ray-sub/main/nodes_base64.txt
+https://raw.githubusercontent.com/ssnn20012001-bot/v2ray-sub/main/nodes_base64.txt
 ```
 
 加速镜像(可选,国内访问更快):
 
 ```
-https://gh-proxy.com/https://raw.githubusercontent.com/szhsh2011-jpg/v2ray-sub/main/nodes_base64.txt
+https://gh-proxy.com/https://raw.githubusercontent.com/ssnn20012001-bot/v2ray-sub/main/nodes_base64.txt
+```
+
+在本机(已配置 8188 服务的环境),也可以直接用内部转发端点,无需走境外网络:
+
+```
+http://127.0.0.1:8188/gh-sub
 ```
 
 ## 使用方式(v2rayN)
@@ -22,6 +28,12 @@ https://gh-proxy.com/https://raw.githubusercontent.com/szhsh2011-jpg/v2ray-sub/m
 2. URL 填上面的地址 → 保存
 3. 右键订阅 → 更新订阅
 4. 之后每次更新都从 GitHub 拉最新集合, 任意设备可用
+
+任意设备通用地址(只要有境外网络或加速镜像):
+
+```
+https://raw.githubusercontent.com/ssnn20012001-bot/v2ray-sub/main/nodes_base64.txt
+```
 
 ## 目录结构
 
