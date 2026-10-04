@@ -1,0 +1,48 @@
+{
+  "settings": {
+    "port": 8188,
+    "output_file": "nodes.txt",
+    "subscription_file": "nodes_base64.txt",
+    "request_timeout": 30,
+    "auto_refresh_minutes": 240,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 MahsaFetch/1.0",
+    "mirrors": [
+      "https://gh-proxy.com/",
+      "https://ghfast.top/"
+    ],
+    "direct_timeout": 12,
+    "mirror_timeout": 20
+  },
+  "sources": [
+    {
+      "name": "VinoosIr_TG收集器",
+      "url": "https://raw.githubusercontent.com/VinoosIr/TelegramV2rayCollector/main/api/normal",
+      "enabled": true
+    },
+    {
+      "name": "Kwinshadow_收集器mix",
+      "url": "https://raw.githubusercontent.com/Kwinshadow/TelegramV2rayCollector/main/sublinks/mix.txt",
+      "enabled": true
+    },
+    {
+      "name": "0xRadikal_已校验",
+      "url": "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs.txt",
+      "enabled": true
+    },
+    {
+      "name": "Alirewa_配置",
+      "url": "https://raw.githubusercontent.com/Alirewa/V2ray-Configs/main/config.txt",
+      "enabled": true
+    },
+    {
+      "name": "Au1rxx_订阅b64",
+      "url": "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
+      "enabled": true
+    },
+    {
+      "name": "Epodonios_250包",
+      "url": "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub1.txt",
+      "enabled": true
+    }
+  ]
+}

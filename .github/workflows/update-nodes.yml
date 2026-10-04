@@ -1,0 +1,43 @@
+name: Update Nodes
+
+# 自动更新订阅节点: 抓取 -> 去重 -> 回写仓库, 每 6 小时 + 可手动触发
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # 每 6 小时
+  workflow_dispatch:
+
+permissions:
+  contents: write          # 允许工作流把更新后的节点文件提交回仓库
+
+concurrency:
+  group: update-nodes
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch and merge nodes
+        shell: bash
+        run: |
+          git config user.name "szhsh2011-jpg"
+          git config user.email "auto@users.noreply.github.com"
+          # 用内置 token 推送(workflow 自动注入), 无需个人 PAT
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          ./fetch.sh 2>&1 | tail -30
+
+      - name: Commit updated nodes
+        shell: bash
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "::notice::无节点变化, 跳过提交"
+          else
+            git commit -m "chore: update nodes $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push origin main
+            echo "::notice::节点已更新并推送"
+          fi
